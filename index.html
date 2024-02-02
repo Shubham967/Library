@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="Heading">
+        <h1>A Simple Library</h1>
+    </div>
+     
+    <div class="Main">
+        <button class="New-Book">Add a Book</button>
+        <div class="BookTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Book Status</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="Books">
+                    <!-- <tr>
+                        <td>Game of Thrones</td>
+                        <td>George Marting</td>
+                        <td>387</td>
+                        <td>Reading</td>
+                        <td>
+                            <button>Change Read Status</button>
+                        </td>
+                        <td>
+                            <button>Edit</button>
+                        </td>
+                        <td>
+                            <button>Delete</button>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="Add-Book-Section" style="display: none;">
+        <div class="New-Book-Form">
+            <h2 class="Form-Title">Add New Book</h2>
+            <button class="close-form">X</button>
+            <label for="b-title">
+                Book Title*
+                <input class="form-control" type="Text" name="book-title" id="book-title" placeholder="Title"> 
+            </label>
+            <label for="b-author">
+                Book Author*
+                <input class="form-control" type="Text" name="book-author" id="book-author" placeholder="Author"> 
+            </label>
+            <label for="b-pages">
+                Book Pages*
+                <input class="form-control" type="number" name="book-pages" id="book-pages" placeholder="Pages"> 
+            </label>
+            <label for="b-title">
+                Book Status*
+                <div class="Radio-Buttons">
+                    <input type="radio" id="statustype1" name="book-status" value="Not Read" checked>
+                    <label for="statustype1">Not Read</label>
+
+                    <input type="radio" id="statustype3" name="book-status" value="Completed">
+                    <label for="statustype3">Completed</label>
+                </div>
+            </label>
+
+            <button class="btn add-book">Add</button>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+
+</body>
+</html>
