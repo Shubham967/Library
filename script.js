@@ -30,6 +30,24 @@ function ClearForm(){
     titleInput.value = "";
     authorInput.value = "";
     pagesInput.value = "";
+
+    let titleError = document.querySelector('#book-titleError');
+    let authorError = document.querySelector('#book-authorError');
+    let pagesError = document.querySelector('#book-pagesError');
+
+    console.log(titleError)
+
+    if(titleError) {
+        titleError.remove();
+    }
+
+    if(authorError) {
+        authorError.remove();
+    }
+
+    if(pagesError) {
+        pagesError.remove();
+    }
 }
 
 
@@ -39,6 +57,7 @@ function ToggleBookForm(toggle){
     }
     else {
         bookForm.style.display = 'none';
+        ClearForm();
     }
 }
 
