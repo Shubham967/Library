@@ -7,6 +7,7 @@ let pagesInput = document.querySelector('#book-pages');
 let statusInput = document.getElementsByName('book-status');
 let libraryBooks = document.querySelector('.Books');
 let closeFormBtn = document.querySelector('.close-form');
+const pattern = /^[a-zA-Z][a-zA-Z0-9\s]*$/;
 let Editing = false
 let editBookIdx = null;
 
@@ -70,7 +71,7 @@ function RemoveError(event) {
 
 function addError(element) {
     let spanError = document.createElement('span');
-    spanError.textContent = `Please Enter ${element.id}`;
+    spanError.textContent = `Please Enter Valid ${element.id}`;
     spanError.id = `${element.id}Error`;
     spanError.classList.add('errorText');
     element.parentNode.insertBefore(spanError,element);
@@ -80,22 +81,45 @@ function addError(element) {
 
 function ValidateFormData() {  
 
-//    if (titleInput.value == "" && document.querySelector('#book-titleError') == null) {
-//     addError(titleInput);
-//    }
-//    if (authorInput.value == "" && document.querySelector('#book-authorError') == null) {
-//     addError(authorInput)
-//    }
-//    if (pagesInput.value == "" && document.querySelector('#book-pagesError') == null) {
-//     addError(pagesInput)
-//    }
-
-   if (titleInput.value == "" || pagesInput.value == "" || authorInput.value == "" || pagesInput.value == 0) {
-    return false;
-   } 
-   else {
-    return true;
+   if (titleInput.value == "" && document.querySelector('#book-titleError') == null) {
+    addError(titleInput);
+    return false
    }
+   if (authorInput.value == "" && document.querySelector('#book-authorError') == null) {
+    addError(authorInput);
+    return false;
+   }
+   if (pagesInput.value == "" && document.querySelector('#book-pagesError') == null) {
+    addError(pagesInput);
+    return false;
+   }
+
+   let submit = Number.isInteger(Number(pagesInput.value));
+   if (pagesInput.value <= 0 || submit == false){
+    if(document.querySelector('#book-pagesError') == null){
+        addError(pagesInput);
+        return false;
+    }
+   }
+
+   if(pattern.test(titleInput.value) == false && document.querySelector('#book-titleError') == null){
+    addError(titleInput);
+    return false;
+   }
+
+   if(pattern.test(authorInput.value) == false && document.querySelector('#book-authorError') == null){
+    addError(authorInput);
+    return false;
+   }
+
+   return true;
+
+//    if (titleInput.value == "" || pagesInput.value == "" || authorInput.value == "" || pagesInput.value <= 0 || submit == false)  {
+//     return false;
+//    } 
+//    else {
+//     return true;
+//    }
 }
 
 function checkIfAdded() {

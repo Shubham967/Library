@@ -46,24 +46,24 @@
             </table>
         </div>
     </div>
-<form action="#" method="get">
+
     <div class="Add-Book-Section" style="display: none;">
         <div class="New-Book-Form">
             <h2 class="Form-Title">Add New Book</h2>
             <button class="close-form">X</button>
-            <label for="b-title">
+            <label for="book-title">
                 Book Title*
-                <input class="form-control" type="Text" name="book-title" id="book-title" placeholder="Title" required pattern="[A-Za-z]+(\s?[A-Za-z]+)*" title="Please Enter a valid Book Title."> 
+                <input class="form-control" type="Text" name="book-title" id="book-title" placeholder="Title"> 
             </label>
-            <label for="b-author">
+            <label for="book-author">
                 Book Author*
-                <input class="form-control" type="Text" name="book-author" id="book-author" placeholder="Author" required pattern="[A-Za-z]+(\s?[A-Za-z]+)*" title="Please Enter a valid Book Author."> 
+                <input class="form-control" type="Text" name="book-author" id="book-author" placeholder="Author" > 
             </label>
-            <label for="b-pages">
+            <label for="book-pages">
                 Book Pages*
-                <input class="form-control" type="number" name="book-pages" id="book-pages" placeholder="Pages" required min="1"> 
+                <input class="form-control" type="number" name="book-pages" id="book-pages" placeholder="Pages" min="1"> 
             </label>
-            <label for="b-title">
+            <label>
                 Book Status*
                 <div class="Radio-Buttons">
                     <input type="radio" id="statustype1" name="book-status" value="Not Read" checked>
@@ -78,7 +78,6 @@
 
         </div>
     </div>
-</form>
    
     <script src="script.js"></script>
 
