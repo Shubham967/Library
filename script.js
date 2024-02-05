@@ -80,17 +80,17 @@ function addError(element) {
 
 function ValidateFormData() {  
 
-   if (titleInput.value == "" && document.querySelector('#book-titleError') == null) {
-    addError(titleInput);
-   }
-   if (authorInput.value == "" && document.querySelector('#book-authorError') == null) {
-    addError(authorInput)
-   }
-   if (pagesInput.value == "" && document.querySelector('#book-pagesError') == null) {
-    addError(pagesInput)
-   }
+//    if (titleInput.value == "" && document.querySelector('#book-titleError') == null) {
+//     addError(titleInput);
+//    }
+//    if (authorInput.value == "" && document.querySelector('#book-authorError') == null) {
+//     addError(authorInput)
+//    }
+//    if (pagesInput.value == "" && document.querySelector('#book-pagesError') == null) {
+//     addError(pagesInput)
+//    }
 
-   if (titleInput.value == "" || pagesInput.value == "" || authorInput.value == "") {
+   if (titleInput.value == "" || pagesInput.value == "" || authorInput.value == "" || pagesInput.value == 0) {
     return false;
    } 
    else {
